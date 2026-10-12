@@ -175,6 +175,17 @@ public class SelectorCordovaPlugin extends CordovaPlugin {
 
                     alert.getWindow().getAttributes().windowAnimations = android.R.style.Animation_Dialog;
                     alert.show();
+
+                    //Epicollect5: brand the action buttons with the app primary
+                    //(#673C90). The dialog theme is stock DeviceDefault, so
+                    //without this the buttons fall back to device accent colors.
+                    int brandPrimary = Color.parseColor("#673C90");
+                    if (alert.getButton(AlertDialog.BUTTON_POSITIVE) != null) {
+                        alert.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(brandPrimary);
+                    }
+                    if (alert.getButton(AlertDialog.BUTTON_NEGATIVE) != null) {
+                        alert.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(brandPrimary);
+                    }
                 }
             };
 

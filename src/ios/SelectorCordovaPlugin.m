@@ -124,7 +124,13 @@ typedef NS_ENUM(NSInteger, SelectorResultType) {
   // Create title label aligned to center and appropriate spacers
   UILabel *label =[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 180, 30)];
   [label setTextAlignment:NSTextAlignmentCenter];
-  [label setTextColor:(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) ? [UIColor blackColor] : [UIColor whiteColor]];
+  //Epicollect5: dynamic label color so the title stays readable in dark mode
+  //(was hardcoded black). iOS 13+ only; older runtimes keep legacy behavior.
+  if (@available(iOS 13.0, *)) {
+    [label setTextColor:[UIColor labelColor]];
+  } else {
+    [label setTextColor:(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) ? [UIColor blackColor] : [UIColor whiteColor]];
+  }
   [label setFont:[UIFont boldSystemFontOfSize:[[_options objectForKey:@"fontSize"] floatValue]]];
   [label setBackgroundColor:[UIColor clearColor]];
   [label setText:[_options objectForKey:@"title"]];
@@ -297,6 +303,12 @@ typedef NS_ENUM(NSInteger, SelectorResultType) {
     pickerLabel = [[UILabel alloc] init];
     pickerLabel.font = [UIFont fontWithName:@"SourceSansPro-Semibold" size:[[_options objectForKey:@"fontSize"] floatValue]];
     pickerLabel.textAlignment=NSTextAlignmentCenter;
+  }
+  //Epicollect5: dynamic row color so values stay readable in dark mode
+  //(custom views keep their color; default black vanishes on dark).
+  //Applied on every call so reused views refresh too.
+  if (@available(iOS 13.0, *)) {
+    pickerLabel.textColor = [UIColor labelColor];
   }
   [pickerLabel setText:_items[component][row]];
   return pickerLabel;

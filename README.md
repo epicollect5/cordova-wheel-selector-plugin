@@ -62,7 +62,10 @@ var config = {
     },
     positiveButtonText: "Yes",
     negativeButtonText: "No",
-    theme: "light | dark",  //lighter or darker theme, not available on iOS yet
+    theme: "light | dark",  //Android: dialog theme. iOS: ignored, the sheet
+                                //uses dynamic system colors and follows the
+                                //app's interface style automatically
+                                //(Epicollect5 fork).
     wrapWheelText: true | false, //wrap the wheel for infinite scroll, not available on iOS
 
     //advanced usage:
