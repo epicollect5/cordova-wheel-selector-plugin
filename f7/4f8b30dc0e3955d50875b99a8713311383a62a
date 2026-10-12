@@ -1,0 +1,14 @@
+src/android/com/wellseek/cordova/SelectorCordovaPlugin.java
+  h_2231ff2aa93473 179-184,355-363
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f74f8b30dc0e3955d50875b99a8713311383a62a",
+  "prompts": {},
+  "humans": {
+    "h_2231ff2aa93473": {
+      "author": "Mirko <mirko.menegazzo@gmail.com>"
+    }
+  }
+}
