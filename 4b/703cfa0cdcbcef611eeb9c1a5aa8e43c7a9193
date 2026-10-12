@@ -1,0 +1,18 @@
+README.md
+  h_2231ff2aa93473 65-68
+src/android/com/wellseek/cordova/SelectorCordovaPlugin.java
+  h_2231ff2aa93473 178-188
+src/ios/SelectorCordovaPlugin.m
+  h_2231ff2aa93473 127-133,307-312
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4b703cfa0cdcbcef611eeb9c1a5aa8e43c7a9193",
+  "prompts": {},
+  "humans": {
+    "h_2231ff2aa93473": {
+      "author": "Mirko <mirko.menegazzo@gmail.com>"
+    }
+  }
+}
